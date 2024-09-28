@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 1.2rem;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Full-width header styling */
+        header {
+            background: #480708;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .menu-icon {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-icon div {
+            font-family: "Molengo", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: #FEAB39;
+        }
+
+        .Popcorn_image {
+            height: 70px;
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        .menu li {
+            font-family: "Montserrat", sans-serif;
+            color: white;
+            margin-left: 40px;
+            margin-bottom: 10px;
+        }
+
+        .login {
+            display: flex;
+            align-items: center;
+            font-family: "Molengo", sans-serif;
+            color: #FEAB39;
+        }
+
+        body {
+            background-color: #340304;
+        }
+
+        /* Flexbox for aligning Combos and Cart side by side */
+        .top-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .combos {
+            font-family: 'Mplus 1p Bold', sans-serif;
+            font-weight: 700;
+            font-size: 64px;
+            color: #FF8D0B;
+        }
+
+        .cart-icon img {
+            width: 60px;
+            height: auto;
+        }
+
+        /* Flexbox for the combo container */
+        .combo-container-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+            width: 1200px;
+            height: 800px;
+            margin: auto;
+        }
+
+        .combo-container {
+            margin: 10px;
+            padding: 20px;
+            flex: 0 0 30%;
+            box-sizing: border-box;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .combo-container > img {
+            background-color: #500002;
+            height: 250px;
+            border-radius: 10px;
+        }
+
+        .combo-container-bottom {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            align-items: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .combo-text {
+            color: white;
+        }
+
+        .combo-container h3 {
+            margin: 0; 
+            padding: 10px; 
+            color: white; 
+            border-radius: 5px; 
+        }
+
+
+footer {
+    background: linear-gradient(0deg,#000000, #340304);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 100px;
+    margin-top: 200px;
+    
+}
+.footer {
+    align-items: flex-end;
+    color:white;
+    bottom: 0;
+    text-align: center;
+}
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-media a {
+    display: inline-block;
+}
+
+.social-media img {
+    width: 40px;
+    height: 40px;
+}
+
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="menu-icon">
+            <img src="Imagens/icons8-popcorn-48.png" class="Popcorn_image">
+            <div>
+                Cine<br>
+                São Carlos
+            </div>
+        </div>
+        <ul class="menu">
+            <li>Home</li>
+            <li>Cinema <img src="Imagens/down-arrow.svg"></li>
+            <li>Filmes</li>
+            <li>Combos</li>
+        </ul>
+        <div class="login">
+            Entrar
+            <img src="Imagens/Vector.svg">
+        </div>
+    </header>
+
+    <!-- Top section with Combos text and market cart -->
+    <div class="top-section">
+        <div class="combos">Combos</div>
+        <div class="cart-icon">
+            <img src="Imagens/market-cart.svg" alt="cart">
+        </div>
+    </div>
+
+    <!-- Combo section with multiple combos -->
+    <div class="combo-container-wrapper">
+        <!-- Combo 1 -->
+        <div class="combo-container">
+            <img src="Imagens/combo1.svg" alt="Combo 1">
+            <div class="combo-container-bottom">
+                <div class="combo-text">
+                    1 pipoca grande<br>
+                    1 pipoca média<br>
+                    1 refri
+                </div>
+                <img src="Imagens/add-button.svg" alt="add-button">
+            </div>
+            <h3>R$ 50,00</h3>
+        </div>
+
+        <!-- Combo 2 -->
+        <div class="combo-container">
+            <img src="Imagens/combo2.svg" alt="Combo 2">
+            <div class="combo-container-bottom">
+                <div class="combo-text">
+                    1 refri<br>
+                    1 lanche<br>
+                    1 doce
+                </div>
+                <img src="Imagens/add-button.svg" alt="add-button">
+            </div>
+            <h3>R$ 40,00</h3>
+        </div>
+
+        <!-- Combo 3 -->
+        <div class="combo-container">
+            <img src="Imagens/combo3.svg" alt="Combo 3">
+            <div class="combo-container-bottom">
+                <div class="combo-text">
+                    2 refris médios
+                </div>
+                <img src="Imagens/add-button.svg" alt="add-button">
+            </div>
+            <h3>R$ 30,00</h3>
+        </div>
+
+        <!-- Combo 4 -->
+        <div class="combo-container">
+            <img src="Imagens/combo4.svg" alt="Combo 4">
+            <div class="combo-container-bottom">
+                <div class="combo-text">
+                    2 refris<br>
+                    2 lanches
+                </div>
+                <img src="Imagens/add-button.svg" alt="add-button">
+            </div>
+            <h3>R$ 50,00</h3>
+        </div>
+
+        <!-- Combo 5 -->
+        <div class="combo-container">
+            <img src="Imagens/combo5.svg" alt="Combo 5">
+            <div class="combo-container-bottom">
+                <div class="combo-text">
+                    1 pipoca gigante<br>
+                    1 refri<br>
+                    2 doces
+                </div>
+                <img src="Imagens/add-button.svg" alt="add-button">
+            </div>
+            <h3>R$ 60,00</h3>
+        </div>
+
+        <!-- Combo 6 -->
+        <div class="combo-container">
+            <img src="Imagens/combo6.svg" alt="Combo 6">
+            <div class="combo-container-bottom">
+                <div class="combo-text">
+                    1 refil de pipoca<br>
+                    1 doce
+                </div>
+                <img src="Imagens/add-button.svg" alt="add-button">
+            </div>
+            <h3>R$ 65,00</h3>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            Acompanhe nossas redes! 
+            <div class="social-media">
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="Imagens/Instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="Imagens/Facebook.png" alt="Facebook">
+                </a>
+                <a href="https://twitter.com" target="_blank">
+                    <img src="Imagens/X Coordinate.png" alt="X">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
