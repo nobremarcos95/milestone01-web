@@ -1,11 +1,19 @@
-Trabalho da dissiplina SCC0219 - Introdução ao Desenvolvimento Web 
+# Trabalho da disciplina SCC0219 - Introdução ao Desenvolvimento Web 
 
-Loja virtual: Cine São Carlos.
+## Integrantes
+Eduarda Almeida Garrett de Carvalho - NUSP
+Joao Pedro Barbosa Madeira - NUSP 
+Marcos Antonio Nobre Coutinho - NUSP 10716397
 
-Imagem do fluxo de navegação
+## Loja virtual
+Cine São Carlos
+
+## Imagem do fluxo de navegação
 ![WhatsApp Image 2024-09-29 at 09 35 49](https://github.com/user-attachments/assets/af86628c-05cc-4fdc-89ba-da313ebba0a5)
 
-mockups for all pages
+## Acesse aqui o [figma](https://www.figma.com/design/3ZFPPNM2QvXf41Lbbhmp75/Untitled?node-id=0-1&t=Kf1yOXT8IOFUq1CU-1)
+
+## Mockups for all pages
 
 ![Home - usuario](https://github.com/user-attachments/assets/e012a769-9693-4aca-bf18-6df7ad093044)
 ![Combos](https://github.com/user-attachments/assets/993d2c17-f665-46e8-8b04-2fe15c75d96b)
