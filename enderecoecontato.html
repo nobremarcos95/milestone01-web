@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Endereço e Contato</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                font-size: 1.2rem;
+                font-family: Arial, sans-serif;
+            }
+            
+            /* Estilos gerais para alinhar e centralizar os elementos na página */
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: #340304; /* Fundo escuro */
+                color: white;
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Full-width header styling */
+            header {
+                background: #480708;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .menu-icon {
+                display: flex;
+                align-items: center;
+            }
+
+            .menu-icon div {
+                font-family: "Molengo", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                color: #FEAB39;
+            }
+
+            .Popcorn_image {
+                height: 70px;
+            }
+
+            .menu {
+                display: flex;
+            }
+
+            .menu li {
+                font-family: "Montserrat", sans-serif;
+                color: white;
+                margin-left: 40px;
+                margin-bottom: 10px;
+            }
+
+            .login {
+                display: flex;
+                align-items: center;
+                font-family: "Molengo", sans-serif;
+                color: #FEAB39;
+            }
+
+            .login img {
+                padding-left: 10px;
+            }
+
+            /* Hover effects */
+            .menu li:hover,
+            .login:hover {
+                cursor: pointer;
+                color: #FEAB39;
+            }
+
+            /* Para organizar os itens horizontalmente */
+            #main-content {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                width: 80%;
+                margin: 20px auto;
+                gap: 20px; /* Espaçamento entre a imagem e os textos */
+            }
+
+            /* Ajustar a largura da imagem e centralizá-la verticalmente */
+            #imagem-local {
+                width: 40%; /* Reduzir a largura da imagem */
+                height: auto;
+                border-radius: 15px;
+                margin-bottom: 10px;
+                border: 1px solid #FEAB39; /* Bordas douradas para destacar */
+            }
+
+            /* Ajustar a largura dos blocos de texto */
+            #endereco, #estacionamento, #contato {
+                width: 50%;
+                background-color: #480708;
+                padding: 20px;
+                margin: 10px;
+                border-radius: 15px;
+            }
+
+            /* Estilo para os títulos dos blocos */
+            .titulo-infos {
+                font-size: 22px;
+                color: #FEAB39;
+                margin-bottom: 10px;
+            }
+
+            /* Estilo para o texto informativo */
+            .infos-infos{
+                font-size: 16px;
+                color: #ffffff;
+                line-height: 1.5;
+            }
+
+            .destaque-contatos{
+                color: #FEAB39;
+            }
+
+            /* Alerta de estacionamento */
+            #alerta-estacionamento {
+                font-size: 18px;
+                color: #FF8C00;
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            /* Rodapé da página */
+            footer {
+                width: 100%; /* Garantir que o rodapé ocupe 100% da tela */
+                padding: 50px;
+                background: linear-gradient(to bottom, transparent, black); /* Gradiente que vai do transparente ao preto */
+                text-align: center;
+                position: relative; /* Posição relativa ao conteúdo da página */
+                left: 0;
+                right: 0;
+            }
+
+            /* Redes sociais no rodapé */
+            footer .social-media img {
+                width: 40px;
+                height: 40px;
+                margin: 0 10px;
+            }
+
+            /* Links de redes sociais no rodapé */
+            footer a {
+                text-decoration: none;
+            }
+
+            footer a:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="menu-icon">
+                <img src="Imagens/icons8-popcorn-48.png" class="Popcorn_image">
+                <div>
+                    Cine<br>
+                    São Carlos
+                </div>
+            </div>
+            <ul class="menu">
+                <li>Home</li>
+                <li>Cinema <img src="Imagens/down-arrow.svg"></li>
+                <li>Filmes</li>
+                <li>Combos</li>
+            </ul>
+            <div class="login">
+                Entrar
+                <img src="Imagens/Vector.svg">
+            </div>
+        </header>
+
+        <div id="main-content">
+            <img id="imagem-local" src="Imagens/565f41bb-682c-42f8-a3aa-7d90bb2df074.jpeg" alt="Cine Sao Carlos">
+            
+            <div>
+                <div id="endereco">
+                    <p class="titulo-infos">ENDEREÇO:</p>
+                    <p class="infos-infos">Rua Major José Inácio, 2154 e 2166 - Centro, São Carlos, SP - Brasil</p>
+                </div>
+        
+                <div id="estacionamento">
+                    <p class="titulo-infos">ESTACIONAMENTO:</p>
+                    <p class="infos-infos">Estacionamento gratuito de 2° a 6° feira a partir das 19h e Sábado. Localizado em frente ao cinema.</p>
+                    <p id="alerta-estacionamento">Estacionamento é exclusivo para nossos clientes durante a exibição do filme!</p>
+                </div>
+        
+                <div id="contato">
+                    <p class="titulo-infos">CONTATO:</p>
+                    <p class="infos-infos">
+                        <span class="destaque-contatos">email:</span> cinesaocarlos@gmail.com<br>
+                        <span class="destaque-contatos">telefone:</span> (16) 3307 - 6006
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+    
+        <footer>
+            <div class="footer">
+                Acompanhe nossas redes! 
+                <div class="social-media">
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="Imagens/Instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="Imagens/Facebook.png" alt="Facebook">
+                    </a>
+                    <a href="https://twitter.com" target="_blank">
+                        <img src="Imagens/X Coordinate.png" alt="X">
+                    </a>
+                </div>
+            </div>
+        </footer>
+        
+    </body>
+
+</html>
