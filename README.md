@@ -3,7 +3,7 @@
 ## Integrantes
 Eduarda Almeida Garrett de Carvalho - NUSP 14566794
 
-Joao Pedro Barbosa Madeira - NUSP 
+Joao Pedro Barbosa Madeira - NUSP 13683038
 
 Marcos Antonio Nobre Coutinho - NUSP 10716397
 
