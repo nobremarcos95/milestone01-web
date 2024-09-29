@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Combos</title>
+    <title>Login</title>
     <style>
         * {
             margin: 0;
@@ -162,6 +162,127 @@ footer {
     height: 40px;
 }
 
+.login-container {
+  background-color: #F0F0F0;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.login-container h3 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  color: #9D9D9D;
+}
+
+.login-container .login-text {
+  color: #817EB4;
+}
+
+.social-login {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: auto;
+}
+
+.social-login button {
+  padding: 10px;
+  border-radius: 8px;
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.social-login button img {
+  margin-right: 10px;
+  width: 35px;
+}
+
+.social-login img {
+  margin-top: 20px;
+}
+
+#fb {
+  background-color: #548DE1;
+  color: white;
+}
+
+#google {
+  margin-top: 10px;
+  background-color: #E2E2E2;
+  color: #7C7C7C;
+}
+
+.input-login {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: auto;
+}
+
+.input-login input {
+  border-radius: 8px;
+  height: 60px;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+.password {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#forgot-pass {
+  margin-top: 10px;
+  margin-left: 0px;
+  height: 60px;
+  background-color: #660204;
+  color: white;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 10px;
+}
+
+.recaptcha {
+  display: flex;
+  flex-direction: row;
+  background-color: #FFFFFF;
+  align-items: center;
+  justify-content: center;
+}
+
+.recaptcha input[type="checkbox"] {
+  transform: scale(2);
+}
+
+.recaptcha p {
+  margin-left: 20px;
+  margin-bottom: 13px;
+}
+
+.recaptcha img {
+  width: 70px;
+  margin-left: 30px;
+}
+
+button[type="submit"] {
+  background-color: #660204;
+  border-radius: 8px;
+  color: white;
+  padding: 20px;
+  font-size: 1rem;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  position: relative;
+  left: 30%;
+}
+
     </style>
 </head>
 <body>
@@ -186,95 +307,45 @@ footer {
         </div>
     </header>
 
-    <!-- Top section with Combos text and market cart -->
-    <div class="top-section">
-        <div class="combos">Combos</div>
-        <div class="cart-icon">
-            <img src="images/market-cart.svg" alt="cart">
-        </div>
-    </div>
+    <div class="login-container">
+      <h3 class="login-text">Login</h3>
 
-    <!-- Combo section with multiple combos -->
-    <div class="combo-container-wrapper">
-        <!-- Combo 1 -->
-        <div class="combo-container">
-            <img src="images/combo1.svg" alt="Combo 1">
-            <div class="combo-container-bottom">
-                <div class="combo-text">
-                    1 pipoca grande<br>
-                    1 pipoca média<br>
-                    1 refri
-                </div>
-                <img src="images/add-button.svg" alt="add-button">
-            </div>
-            <h3>R$ 50,00</h3>
-        </div>
+      <div class="social-login">
+        <button id="fb">
+          <img src="images/fb-logo.png" alt="login-facebook" />
+          Entre com o Facebook
+        </button>
+        <button id="google">
+          <img src="images/google-logo.png" alt="login-google" />
+          Entre com o Google
+        </button>
+        <img src="images/or-divider.png" alt="or divider" />
+      </div>
 
-        <!-- Combo 2 -->
-        <div class="combo-container">
-            <img src="images/combo2.svg" alt="Combo 2">
-            <div class="combo-container-bottom">
-                <div class="combo-text">
-                    1 refri<br>
-                    1 lanche<br>
-                    1 doce
-                </div>
-                <img src="images/add-button.svg" alt="add-button">
-            </div>
-            <h3>R$ 40,00</h3>
-        </div>
+      <div class="input-login">
+        <h3>Acesse com login e senha</h3>
+        <form action="" method="post">
+          <label for="email">E-mail<br />
+            <input type="email" name="email" id="email" />
+          </label>
+  
+          <div class="password">
+            <label for="password">Senha<br />
+              <input type="password" name="password" id="password" />
+            </label>
+            <button id="forgot-pass">Esqueceu?</button>
+          </div>
+  
+          <div class="recaptcha">
+            <input type="checkbox" name="recaptcha" id="recaptcha" />
+            <p>Não sou um robô</p>
+            <img src="images/recaptcha.png" alt="recaptcha" />
+          </div>
 
-        <!-- Combo 3 -->
-        <div class="combo-container">
-            <img src="images/combo3.svg" alt="Combo 3">
-            <div class="combo-container-bottom">
-                <div class="combo-text">
-                    2 refris médios
-                </div>
-                <img src="images/add-button.svg" alt="add-button">
-            </div>
-            <h3>R$ 30,00</h3>
-        </div>
+          <button type="submit">Efetuar login</button>
+        </form>
+      </div>
 
-        <!-- Combo 4 -->
-        <div class="combo-container">
-            <img src="images/combo4.svg" alt="Combo 4">
-            <div class="combo-container-bottom">
-                <div class="combo-text">
-                    2 refris<br>
-                    2 lanches
-                </div>
-                <img src="images/add-button.svg" alt="add-button">
-            </div>
-            <h3>R$ 50,00</h3>
-        </div>
-
-        <!-- Combo 5 -->
-        <div class="combo-container">
-            <img src="images/combo5.svg" alt="Combo 5">
-            <div class="combo-container-bottom">
-                <div class="combo-text">
-                    1 pipoca gigante<br>
-                    1 refri<br>
-                    2 doces
-                </div>
-                <img src="images/add-button.svg" alt="add-button">
-            </div>
-            <h3>R$ 60,00</h3>
-        </div>
-
-        <!-- Combo 6 -->
-        <div class="combo-container">
-            <img src="images/combo6.svg" alt="Combo 6">
-            <div class="combo-container-bottom">
-                <div class="combo-text">
-                    1 refil de pipoca<br>
-                    1 doce
-                </div>
-                <img src="images/add-button.svg" alt="add-button">
-            </div>
-            <h3>R$ 65,00</h3>
-        </div>
     </div>
 
     <footer>
