@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 1.2rem;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Full-width header styling */
+        header {
+            background: #480708;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .menu-icon {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-icon div {
+            font-family: "Molengo", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: #FEAB39;
+        }
+
+        .Popcorn_image {
+            height: 70px;
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        .menu li {
+            font-family: "Montserrat", sans-serif;
+            color: white;
+            margin-left: 40px;
+            margin-bottom: 10px;
+        }
+
+        .login {
+            display: flex;
+            align-items: center;
+            font-family: "Molengo", sans-serif;
+            color: #FEAB39;
+        }
+
+        body {
+            background-color: #340304;
+        }
+
+        /* Flexbox for aligning Combos and Cart side by side */
+        .top-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .combos {
+            font-family: 'Mplus 1p Bold', sans-serif;
+            font-weight: 700;
+            font-size: 64px;
+            color: #FF8D0B;
+        }
+
+        .cart-icon img {
+            width: 60px;
+            height: auto;
+        }
+
+        /* Flexbox for the combo container */
+        .combo-container-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+            width: 1200px;
+            height: 800px;
+            margin: auto;
+        }
+
+        .combo-container {
+            margin: 10px;
+            padding: 20px;
+            flex: 0 0 30%;
+            box-sizing: border-box;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .combo-container > img {
+            background-color: #500002;
+            height: 250px;
+            border-radius: 10px;
+        }
+
+        .combo-container-bottom {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            align-items: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .combo-text {
+            color: white;
+        }
+
+        .combo-container h3 {
+            margin: 0; 
+            padding: 10px; 
+            color: white; 
+            border-radius: 5px; 
+        }
+
+
+footer {
+    background: linear-gradient(0deg,#000000, #340304);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 100px;
+    margin-top: 200px;
+    
+}
+.footer {
+    align-items: flex-end;
+    color:white;
+    bottom: 0;
+    text-align: center;
+}
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-media a {
+    display: inline-block;
+}
+
+.social-media img {
+    width: 40px;
+    height: 40px;
+}
+
+.login-container {
+  background-color: #F0F0F0;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.login-container h3 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  color: #9D9D9D;
+}
+
+.login-container .login-text {
+  color: #817EB4;
+}
+
+.social-login {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: auto;
+}
+
+.social-login button {
+  padding: 10px;
+  border-radius: 8px;
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.social-login button img {
+  margin-right: 10px;
+  width: 35px;
+}
+
+.social-login img {
+  margin-top: 20px;
+}
+
+#fb {
+  background-color: #548DE1;
+  color: white;
+}
+
+#google {
+  margin-top: 10px;
+  background-color: #E2E2E2;
+  color: #7C7C7C;
+}
+
+.input-login {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: auto;
+}
+
+.input-login input {
+  border-radius: 8px;
+  height: 60px;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+.password {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#forgot-pass {
+  margin-top: 10px;
+  margin-left: 0px;
+  height: 60px;
+  background-color: #660204;
+  color: white;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 10px;
+}
+
+.recaptcha {
+  display: flex;
+  flex-direction: row;
+  background-color: #FFFFFF;
+  align-items: center;
+  justify-content: center;
+}
+
+.recaptcha input[type="checkbox"] {
+  transform: scale(2);
+}
+
+.recaptcha p {
+  margin-left: 20px;
+  margin-bottom: 13px;
+}
+
+.recaptcha img {
+  width: 70px;
+  margin-left: 30px;
+}
+
+button[type="submit"] {
+  background-color: #660204;
+  border-radius: 8px;
+  color: white;
+  padding: 20px;
+  font-size: 1rem;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  position: relative;
+  left: 30%;
+}
+
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="menu-icon">
+            <img src="images/icons8-popcorn-48.png" class="Popcorn_image">
+            <div>
+                Cine<br>
+                São Carlos
+            </div>
+        </div>
+        <ul class="menu">
+            <li>Home</li>
+            <li>Cinema <img src="images/down-arrow.svg"></li>
+            <li>Filmes</li>
+            <li>Combos</li>
+        </ul>
+        <div class="login">
+            Entrar
+            <img src="images/Vector.svg">
+        </div>
+    </header>
+
+    <div class="login-container">
+      <h3 class="login-text">Login</h3>
+
+      <div class="social-login">
+        <button id="fb">
+          <img src="images/fb-logo.png" alt="login-facebook" />
+          Entre com o Facebook
+        </button>
+        <button id="google">
+          <img src="images/google-logo.png" alt="login-google" />
+          Entre com o Google
+        </button>
+        <img src="images/or-divider.png" alt="or divider" />
+      </div>
+
+      <div class="input-login">
+        <h3>Acesse com login e senha</h3>
+        <form action="" method="post">
+          <label for="email">E-mail<br />
+            <input type="email" name="email" id="email" />
+          </label>
+  
+          <div class="password">
+            <label for="password">Senha<br />
+              <input type="password" name="password" id="password" />
+            </label>
+            <button id="forgot-pass">Esqueceu?</button>
+          </div>
+  
+          <div class="recaptcha">
+            <input type="checkbox" name="recaptcha" id="recaptcha" />
+            <p>Não sou um robô</p>
+            <img src="images/recaptcha.png" alt="recaptcha" />
+          </div>
+
+          <button type="submit">Efetuar login</button>
+        </form>
+      </div>
+
+    </div>
+
+    <footer>
+        <div class="footer">
+            Acompanhe nossas redes! 
+            <div class="social-media">
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="images/Instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="images/Facebook.png" alt="Facebook">
+                </a>
+                <a href="https://twitter.com" target="_blank">
+                    <img src="images/X Coordinate.png" alt="X">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
