@@ -1,7 +1,7 @@
 # Trabalho da disciplina SCC0219 - Introdução ao Desenvolvimento Web 
 
 ## Integrantes
-Eduarda Almeida Garrett de Carvalho - NUSP
+Eduarda Almeida Garrett de Carvalho - NUSP 14566794
 
 Joao Pedro Barbosa Madeira - NUSP 
 
