@@ -1,0 +1,174 @@
+/* Reset de estilos e configurações básicas para todos os elementos */
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais para alinhar e centralizar os elementos na página */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #340304; /* Fundo escuro */
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo do cabeçalho de largura total */
+header {
+    background: #480708;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilos para o ícone do menu */
+.menu-icon {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon div {
+    font-family: "Molengo", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #FEAB39;
+}
+
+.Popcorn_image {
+    height: 70px;
+}
+
+/* Estilos para o menu de navegação */
+.menu {
+    display: flex;
+}
+
+.menu li {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para os links dentro dos itens da lista */
+li a {
+    font-family: inherit;
+    color: inherit;
+}
+
+/* Estilos para a seção de login */
+.login {
+    display: flex;
+    align-items: center;
+    font-family: "Molengo", sans-serif;
+    color: #FEAB39;
+}
+
+.login img {
+    padding-left: 10px;
+}
+
+/* Efeitos de hover para menu e login */
+.menu li:hover,
+.login:hover {
+    cursor: pointer;
+    color: #FEAB39;
+}
+
+/* Organização dos elementos principais horizontalmente */
+#main-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 80%;
+    margin: 20px auto;
+    gap: 20px; /* Espaçamento entre a imagem e os textos */
+}
+
+/* Ajustar a largura da imagem e centralizá-la verticalmente */
+#imagem-local {
+    width: 40%; /* Largura da imagem */
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #FEAB39; /* Borda dourada para destaque */
+}
+
+/* Ajustar a largura dos blocos de texto */
+#endereco,
+#estacionamento,
+#contato {
+    width: 50%;
+    background-color: #480708;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+/* Estilo para os títulos dos blocos */
+.titulo-infos {
+    font-size: 22px;
+    color: #FEAB39;
+    margin-bottom: 10px;
+}
+
+/* Estilo para o texto informativo */
+.infos-infos {
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+/* Destaque para informações de contato */
+.destaque-contatos {
+    color: #FEAB39;
+}
+
+/* Alerta de estacionamento */
+#alerta-estacionamento {
+    font-size: 18px;
+    color: #FF8C00;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Rodapé da página */
+footer {
+    width: 100%; /* O rodapé ocupa 100% da tela */
+    padding: 50px;
+    background: linear-gradient(to bottom, transparent, black); /* Gradiente do transparente ao preto */
+    text-align: center;
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+/* Estilos para as redes sociais no rodapé */
+footer .social-media img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+}
+
+/* Links das redes sociais no rodapé */
+footer a {
+    text-decoration: none;
+}
+
+/* Efeito de hover para links no rodapé */
+footer a:hover {
+    text-decoration: underline;
+}

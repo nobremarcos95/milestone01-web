@@ -1,0 +1,186 @@
+/* Reset de estilos para todos os elementos */
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial, sans-serif;
+    
+}
+/* Cor de fundo do corpo */
+body {
+    background-color: #340304;
+}
+
+/* Estilo do cabeçalho de largura total */
+header {
+    background: #480708;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilos para o ícone do menu */
+.menu-icon {
+    display: flex;
+    align-items: center;
+}
+
+
+.menu-icon div {
+    font-family: "Molengo", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #FEAB39;
+}
+
+.Popcorn_image {
+    height: 70px;
+}
+
+/* Estilos para o menu */
+.menu {
+    display: flex;
+}
+
+.menu li {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+/* Estilo para os links dentro dos itens da lista */
+li a {
+    font-family: inherit;
+    color:inherit; 
+
+}
+/* Hover effects */
+.menu li:hover,
+.login:hover {
+    cursor: pointer;
+    color: #FEAB39;
+}
+
+
+/* Estilos para a seção de login */
+.login {
+    display: flex;
+    align-items: center;
+    font-family: "Molengo", sans-serif;
+    color: #FEAB39;
+}
+.login img {
+    padding-left: 10px;
+}
+
+/* Flexbox para alinhar Combos e Carrinho lado a lado */
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Estilos para o título "Combos" */
+.combos {
+    font-family: 'Mplus 1p Bold', sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    color: #FF8D0B;
+}
+
+/* Estilos para o ícone do carrinho */
+.cart-icon img {
+    width: 60px;
+    height: auto;
+}
+
+/* Flexbox para o contêiner de combos */
+.combo-container-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    width: 1200px;
+    height: 800px;
+    margin: auto;
+}
+
+/* Estilos para cada contêiner de combo */
+.combo-container {
+    margin: 10px;
+    padding: 20px;
+    flex: 0 0 30%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.combo-container > img {
+    background-color: #500002;
+    height: 250px;
+    border-radius: 10px;
+}
+
+/* Estilos para a parte inferior do contêiner de combo */
+.combo-container-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    color: white;
+}
+
+/* Estilos para o texto do combo */
+.combo-text {
+    color: white;
+}
+
+.combo-container h3 {
+    margin: 0;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Estilos para o rodapé */
+footer {
+    background: linear-gradient(0deg, #000000, #340304);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 100px;
+    margin-top: 200px;
+}
+
+.footer {
+    align-items: flex-end;
+    color: white;
+    bottom: 0;
+    text-align: center;
+}
+
+/* Estilos para as mídias sociais no rodapé */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-media a {
+    display: inline-block;
+}
+
+.social-media img {
+    width: 40px;
+    height: 40px;
+}

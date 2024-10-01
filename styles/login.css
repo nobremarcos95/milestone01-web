@@ -1,0 +1,310 @@
+/* Reset de estilos e configurações básicas para todos os elementos */
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo do cabeçalho de largura total */
+header {
+    background: #480708;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilos para o ícone do menu */
+.menu-icon {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon div {
+    font-family: "Molengo", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #FEAB39;
+}
+
+.Popcorn_image {
+    height: 70px;
+}
+
+/* Estilos para o menu de navegação */
+.menu {
+    display: flex;
+}
+
+.menu li {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para os links dentro dos itens da lista */
+li a {
+    font-family: inherit;
+    color: inherit;
+}
+
+/* Estilos para a seção de login */
+.login {
+    display: flex;
+    align-items: center;
+    font-family: "Molengo", sans-serif;
+    color: #FEAB39;
+}
+
+.login img {
+    padding-left: 10px;
+}
+
+/* Estilo do corpo da página */
+body {
+    background-color: #340304;
+}
+
+/* Flexbox para alinhar "Combos" e o ícone do carrinho lado a lado */
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Estilos para o título "Combos" */
+.combos {
+    font-family: 'Mplus 1p Bold', sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    color: #FF8D0B;
+}
+
+/* Estilos para o ícone do carrinho */
+.cart-icon img {
+    width: 60px;
+    height: auto;
+}
+
+/* Flexbox para o contêiner de combos */
+.combo-container-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    width: 1200px;
+    height: 800px;
+    margin: auto;
+}
+
+/* Estilos para cada contêiner de combo */
+.combo-container {
+    margin: 10px;
+    padding: 20px;
+    flex: 0 0 30%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.combo-container > img {
+    background-color: #500002;
+    height: 250px;
+    border-radius: 10px;
+}
+
+/* Estilos para a parte inferior do contêiner de combo */
+.combo-container-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    color: white;
+}
+
+/* Estilos para o texto do combo */
+.combo-text {
+    color: white;
+}
+
+.combo-container h3 {
+    margin: 0;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Estilos para o rodapé */
+footer {
+    background: linear-gradient(0deg, #000000, #340304);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 100px;
+    margin-top: 200px;
+}
+
+.footer {
+    align-items: flex-end;
+    color: white;
+    bottom: 0;
+    text-align: center;
+}
+
+/* Estilos para as mídias sociais no rodapé */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-media a {
+    display: inline-block;
+}
+
+.social-media img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Estilos para o contêiner de login */
+.login-container {
+    background-color: #F0F0F0;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.login-container h3 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    color: #9D9D9D;
+}
+
+.login-container .login-text {
+    color: #817EB4;
+}
+
+/* Estilos para a seção de login social */
+.social-login {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: auto;
+}
+
+.social-login button {
+    padding: 10px;
+    border-radius: 8px;
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.social-login button img {
+    margin-right: 10px;
+    width: 35px;
+}
+
+.social-login img {
+    margin-top: 20px;
+}
+
+/* Estilos para o botão do Facebook */
+#fb {
+    background-color: #548DE1;
+    color: white;
+}
+
+/* Estilos para o botão do Google */
+#google {
+    margin-top: 10px;
+    background-color: #E2E2E2;
+    color: #7C7C7C;
+}
+
+/* Estilos para o formulário de login */
+.input-login {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: auto;
+}
+
+.input-login input {
+    border-radius: 8px;
+    height: 60px;
+    margin-top: 16px;
+    margin-bottom: 32px;
+}
+
+/* Estilos para a seção de senha */
+.password {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Estilos para o botão "Esqueci a senha" */
+#forgot-pass {
+    margin-top: 10px;
+    margin-left: 0px;
+    height: 60px;
+    background-color: #660204;
+    color: white;
+    border-radius: 8px;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+/* Estilos para o reCAPTCHA */
+.recaptcha {
+    display: flex;
+    flex-direction: row;
+    background-color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+}
+
+.recaptcha input[type="checkbox"] {
+    transform: scale(2);
+}
+
+.recaptcha p {
+    margin-left: 20px;
+    margin-bottom: 13px;
+}
+
+.recaptcha img {
+    width: 70px;
+    margin-left: 30px;
+}
+
+/* Estilos para o botão de submissão */
+button[type="submit"] {
+    background-color: #660204;
+    border-radius: 8px;
+    color: white;
+    padding: 20px;
+    font-size: 1rem;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    position: relative;
+    left: 30%;
+}

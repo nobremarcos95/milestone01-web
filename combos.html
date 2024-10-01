@@ -4,165 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combos</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            font-size: 1.2rem;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Full-width header styling */
-        header {
-            background: #480708;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .menu-icon {
-            display: flex;
-            align-items: center;
-        }
-
-        .menu-icon div {
-            font-family: "Molengo", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            color: #FEAB39;
-        }
-
-        .Popcorn_image {
-            height: 70px;
-        }
-
-        .menu {
-            display: flex;
-        }
-
-        .menu li {
-            font-family: "Montserrat", sans-serif;
-            color: white;
-            margin-left: 40px;
-            margin-bottom: 10px;
-        }
-
-        .login {
-            display: flex;
-            align-items: center;
-            font-family: "Molengo", sans-serif;
-            color: #FEAB39;
-        }
-
-        body {
-            background-color: #340304;
-        }
-
-        /* Flexbox for aligning Combos and Cart side by side */
-        .top-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .combos {
-            font-family: 'Mplus 1p Bold', sans-serif;
-            font-weight: 700;
-            font-size: 64px;
-            color: #FF8D0B;
-        }
-
-        .cart-icon img {
-            width: 60px;
-            height: auto;
-        }
-
-        /* Flexbox for the combo container */
-        .combo-container-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding: 20px;
-            width: 1200px;
-            height: 800px;
-            margin: auto;
-        }
-
-        .combo-container {
-            margin: 10px;
-            padding: 20px;
-            flex: 0 0 30%;
-            box-sizing: border-box;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .combo-container > img {
-            background-color: #500002;
-            height: 250px;
-            border-radius: 10px;
-        }
-
-        .combo-container-bottom {
-            display: flex;
-            justify-content: space-between;
-            color: white;
-            align-items: center;
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        .combo-text {
-            color: white;
-        }
-
-        .combo-container h3 {
-            margin: 0; 
-            padding: 10px; 
-            color: white; 
-            border-radius: 5px; 
-        }
-
-
-footer {
-    background: linear-gradient(0deg,#000000, #340304);
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding: 100px;
-    margin-top: 200px;
-    
-}
-.footer {
-    align-items: flex-end;
-    color:white;
-    bottom: 0;
-    text-align: center;
-}
-.social-media {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.social-media a {
-    display: inline-block;
-}
-
-.social-media img {
-    width: 40px;
-    height: 40px;
-}
-
-    </style>
+    <link rel="stylesheet" href="styles/combos.css">
 </head>
 <body>
     <!-- header -->
@@ -175,15 +17,17 @@ footer {
             </div>
         </div>
         <ul class="menu">
-            <li>Home</li>
-            <li>Cinema <img src="images/down-arrow.svg"></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="enderecoecontato.html">Cinema </a><img src="images/down-arrow.svg"></li>
             <li>Filmes</li>
-            <li>Combos</li>
+            <li><a href="combos.html">Combos</a></li>
         </ul>
-        <div class="login">
-            Entrar
-            <img src="images/Vector.svg">
-        </div>
+        <a href="login.html">
+            <div class="login">
+                Entrar
+                <img src="images/Vector.svg">
+            </div>
+        </a>
     </header>
 
     <!-- Top section with Combos text and market cart -->

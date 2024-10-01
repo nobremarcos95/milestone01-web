@@ -1,0 +1,295 @@
+/* Reset de estilos e configurações básicas para todos os elementos */
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo do cabeçalho de largura total */
+header {
+    background: #480708;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilos para o ícone do menu */
+.menu-icon {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon div {
+    font-family: "Molengo", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #FEAB39;
+}
+
+.Popcorn_image {
+    height: 70px;
+}
+
+/* Estilos para o menu de navegação */
+.menu {
+    display: flex;
+}
+
+.menu li {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para os links dentro dos itens da lista */
+li a {
+    font-family: inherit;
+    color: inherit;
+}
+
+/* Estilos para a seção de login */
+.login {
+    display: flex;
+    align-items: center;
+    font-family: "Molengo", sans-serif;
+    color: #FEAB39;
+}
+
+.login img {
+    padding-left: 10px;
+}
+
+/* Estilo do corpo da página */
+body {
+    background-color: #340304;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Wrapper do carrossel para centralização */
+.carousel {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    position: relative;
+}
+
+.carousel img {
+    width: 20em;
+    border-radius: 10px;
+}
+
+/* Sobreposição gradiente no carrossel */
+.carousel-overlay {
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), transparent);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    align-content: space-between;
+}
+
+.carousel-overlay h2 {
+    font-size: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+    align-self: center;
+    margin-right: 50px;
+}
+
+.carousel-overlay button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    background-color: #FEAB39;
+    border: none;
+    color: #340304;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.carousel-overlay button:hover {
+    background-color: #d49032;
+}
+
+/* Efeitos de hover para menu e login */
+.menu li:hover,
+.login:hover {
+    cursor: pointer;
+    color: #FEAB39;
+}
+
+/* Seção com fundo desfocado */
+.blurred-section {
+    margin: 250px 0 250px;
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-image: url('../images/79eddc19bfb4fd0b36394af526c9c8cf.png'); /* Substitua pelo caminho da sua imagem */
+    background-position: center;
+}
+
+/* Aplicar desfoque em uma sobreposição de fundo separada */
+.blurred-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit; /* Usa a mesma imagem de fundo */
+    filter: blur(10px); /* Aplica o efeito de desfoque */
+}
+
+/* Conteúdo em primeiro plano à frente do fundo desfocado */
+.foreground-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilo para o texto "Em Breve" */
+.coming-soon {
+    font-size: 2.5rem;
+    font-family: "Montserrat", sans-serif;
+    color: #FEAB39;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    align-self: flex-start;
+}
+
+/* Estilos para as imagens em primeiro plano */
+.foreground-images img {
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.foreground-images img:nth-of-type(2) {
+    margin: 0 100px;
+}
+
+/* Indicadores de pontos (dots) */
+.dot-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #FEAB39; /* Cor do ponto ativo */
+}
+
+/* Setas do carrossel */
+.arrow-left,
+.arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+}
+
+.arrow-left {
+    left: 20px;
+}
+
+.arrow-right {
+    right: 20px;
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Garantir que o carrossel e o conteúdo em primeiro plano estejam posicionados relativamente */
+.carousel,
+.foreground-content {
+    position: relative;
+}
+
+/* Ajustes para as setas na seção com fundo desfocado */
+.blurred-section .arrow-left,
+.blurred-section .arrow-right {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.blurred-section .arrow-left {
+    left: 10px;
+}
+
+.blurred-section .arrow-right {
+    right: 10px;
+}
+
+/* Estilo de hover opcional para as setas */
+.blurred-section .arrow-left:hover,
+.blurred-section .arrow-right:hover {
+    transform: translateY(-50%) scale(1.2);
+}
+
+/* Estilos para o rodapé */
+footer {
+    background: linear-gradient(0deg, #000000, #340304);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 100px;
+    margin-top: 200px;
+}
+
+.footer {
+    align-items: flex-end;
+    color: white;
+    bottom: 0;
+    text-align: center;
+}
+
+/* Estilos para as mídias sociais no rodapé */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-media a {
+    display: inline-block;
+}
+
+.social-media img {
+    width: 40px;
+    height: 40px;
+}
