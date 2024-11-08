@@ -75,36 +75,57 @@ body {
     overflow-x: hidden;
 }
 
-/* Wrapper do carrossel para centralização */
-.carousel {
+/* Wrapper do carrossel */
+/* Contêiner principal para centralizar o carrossel */
+.carousel-container {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    align-items: center;
+    height: 100vh; /* Ajusta para centralizar verticalmente */
+}
+
+
+
+/* Estilização do carrossel */
+.carousel {
     position: relative;
+    flex-direction: column;
+    overflow: hidden;
+    width: 20em;
+    height: 30em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Centraliza o carrossel horizontalmente */
+    margin-top: 30px;
 }
 
 .carousel img {
-    width: 20em;
+    width: 100%; /* Ajusta a largura para ocupar o contêiner */
+    height: 100%; /* Ajusta a altura para cobrir o contêiner */
     border-radius: 10px;
+    object-fit: cover; /* Para cobrir toda a área do contêiner */
 }
+
 
 /* Sobreposição gradiente no carrossel */
 .carousel-overlay {
     position: absolute;
     bottom: 0;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), transparent);
-    padding: 20px;
-    border-radius: 10px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fundo mais transparente */
     color: white;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
     display: flex;
-    align-content: space-between;
+    flex-direction: column;
+    align-items: center; /* Centraliza conteúdo */
 }
 
 .carousel-overlay h2 {
     font-size: 1.5rem;
     font-family: "Montserrat", sans-serif;
-    align-self: center;
-    margin-right: 50px;
+    margin: 0;
 }
 
 .carousel-overlay button {
@@ -116,12 +137,67 @@ body {
     color: #340304;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .carousel-overlay button:hover {
     background-color: #d49032;
 }
+
+
+/* Exibe o item ativo com animação de transição */
+.carousel-item {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease; /* Adiciona uma transição suave */
+    width: 100%; /* Garante que todos os itens tenham o mesmo tamanho */
+    height: 100%; /* Ajusta a altura conforme o contêiner */
+}
+
+.carousel-item.active {
+    display: block;
+    transform: translateX(0); /* Item ativo no centro */
+}
+
+carousel-item.prev {
+    transform: translateX(-100%); /* Item anterior fora à esquerda */
+}
+
+.carousel-item.next {
+    transform: translateX(100%); /* Próximo item fora à direita */
+}
+
+/* Estilo dos dots */
+.dot-indicators {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #FEAB39; /* Cor do dot ativo */
+}
+
+/* Ajustes adicionais para centralizar e espaçar o conteúdo */
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
 
 /* Reset de estilos e configurações básicas para todos os elementos */
 * {
@@ -248,7 +324,7 @@ li a {
     max-height: 1000px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    margin: 0 120spx;
+    margin: 0 120px;
     flex-shrink: 0;
     height: auto;
 }
