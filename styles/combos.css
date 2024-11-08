@@ -102,6 +102,13 @@ li a {
     height: auto;
 }
 
+.cart-icon {
+    display: flex;
+    align-items: center;
+    position: relative; /* Garante o posicionamento do contador relativo ao carrinho */
+}
+
+
 /* Flexbox para o contêiner de combos */
 .combo-container-wrapper {
     display: flex;
@@ -113,6 +120,15 @@ li a {
     margin: auto;
 }
 
+.cart-counter {
+    position: relative;
+    left: 10px; /* Ajusta a distância do número em relação ao ícone */
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+}
 /* Estilos para cada contêiner de combo */
 .combo-container {
     margin: 10px;
