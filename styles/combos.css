@@ -140,6 +140,12 @@ li a {
     color: white;
 }
 
+/* Efeito de hover para aumentar a imagem do botão */
+.combo-container-bottom img:hover {
+    transform: scale(1.1); /* Aumenta em 10% */
+    transition: transform 0.3s ease; /* Suaviza a transição */
+}
+
 /* Estilos para o texto do combo */
 .combo-text {
     color: white;
