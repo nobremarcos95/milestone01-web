@@ -1,0 +1,152 @@
+/* Reset de estilos e configurações básicas para todos os elementos */
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo do cabeçalho de largura total */
+header {
+    background: #480708;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #340304;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para o ícone do menu */
+.menu-icon {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon div {
+    font-family: "Molengo", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #FEAB39;
+}
+
+.Popcorn_image {
+    height: 70px;
+}
+
+/* Estilos para o menu de navegação */
+.menu {
+    display: flex;
+}
+
+.menu li {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para os links dentro dos itens da lista */
+li a {
+    font-family: inherit;
+    color: inherit;
+}
+
+/* Estilos para a seção de login */
+.login {
+    display: flex;
+    align-items: center;
+    font-family: "Molengo", sans-serif;
+    color: #FEAB39;
+}
+
+.login img {
+    padding-left: 10px;
+}
+
+/* Efeitos de hover para menu e login */
+.menu li:hover,
+.login:hover {
+    cursor: pointer;
+    color: #FEAB39;
+}
+
+/* Estilo para a seção principal */
+.content {
+    display: flex; /* Usando flexbox para organizar os elementos em linha */
+    background-color: #340304;
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui o padding no tamanho total */
+    height: calc(100vh - 200px); /* Altura dinâmica, descontando o header e footer */
+}
+
+/* Estilo para o texto (lado esquerdo) */
+#text_warning {
+    flex: 1; /* Ocupará metade do espaço */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    color: #FEAB39;
+    font-weight: bolder;
+    font-family: "Montserrat", sans-serif;
+    font-size: 60px;
+    padding: 70px;
+}
+
+/* Estilo para a imagem (lado direito) */
+#image_fixing {
+    flex: 1; /* Ocupará metade do espaço */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#image_fixing img {
+    max-width: 90%; /* Impede que a imagem ocupe mais que 90% da largura do contêiner */
+    max-height: 90%; /* Impede que a imagem ocupe mais que 90% da altura */
+    object-fit: contain; /* Garante que a imagem seja redimensionada proporcionalmente */
+}
+
+/* Estilos para o rodapé */
+footer {
+    background: linear-gradient(0deg, #000000, #340304);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 100px;
+    margin-top: 20px;
+}
+
+.footer {
+    align-items: flex-end;
+    color: white;
+    bottom: 0;
+    text-align: center;
+}
+
+/* Estilos para as mídias sociais no rodapé */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-media a {
+    display: inline-block;
+}
+
+.social-media img {
+    width: 40px;
+    height: 40px;
+}
