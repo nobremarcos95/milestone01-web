@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combos</title>
     <link rel="stylesheet" href="styles/combos.css">
+    <link rel="stylesheet" href="styles/cart.css"
 </head>
 <body>
     <!-- header -->
@@ -35,10 +36,12 @@
         <div class="combos">Combos</div>
         <div class="cart-icon">
             <img src="images/market-cart.svg" alt="cart">
+            <div class="cart-counter">0</div> <!-- Contador de itens no carrinho -->
         </div>
     </div>
+    
 
-    <!-- Combo section with dynamically generated combos -->
+    <!-- Combo section where combos will be dynamically generated -->
     <div class="combo-container-wrapper">
         <!-- Os combos serão adicionados dinamicamente pelo combos.js -->
     </div>
@@ -59,9 +62,9 @@
             </div>
         </div>
     </footer>
+
+    <!-- Incluindo os arquivos JavaScript -->
+    <script src="js/combos.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 </html>
-
-<!-- Incluindo os arquivos JavaScript -->
-<script src="js/combos.js"></script>
-<script src="js/cart.js"></script>
