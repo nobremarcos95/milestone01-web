@@ -1,6 +1,9 @@
 // cart.js
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    const cartCounter = document.querySelector('.cart-counter'); // Seleciona o contador
+
     // Função para carregar o carrinho do sessionStorage
     function loadCart() {
         let cart = sessionStorage.getItem('cart');
@@ -14,6 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Função para salvar o carrinho no sessionStorage
     function saveCart(cart) {
         sessionStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    // Função para atualizar o contador de itens
+    function updateCartCounter() {
+        const cart = loadCart();
+        const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
+        cartCounter.textContent = itemCount; // Atualiza o texto do contador com a quantidade de itens
     }
 
     // Função para adicionar item ao carrinho
@@ -30,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cart.push(combo);
         }
         saveCart(cart);
+        updateCartCounter(); // Atualiza o contador após adicionar um item
         alert(`"${combo.name}" foi adicionado ao carrinho!`);
     }
 
@@ -44,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cart.splice(index, 1);
         }
         saveCart(cart);
+        updateCartCounter();
     }
     
 
