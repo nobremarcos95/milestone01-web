@@ -72,6 +72,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 /* Wrapper do carrossel para centralização */
@@ -122,12 +123,74 @@ body {
     background-color: #d49032;
 }
 
-/* Efeitos de hover para menu e login */
-.menu li:hover,
-.login:hover {
-    cursor: pointer;
+/* Reset de estilos e configurações básicas para todos os elementos */
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo do cabeçalho de largura total */
+header {
+    background: #480708;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilos para o ícone do menu */
+.menu-icon {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon div {
+    font-family: "Molengo", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     color: #FEAB39;
 }
+
+.Popcorn_image {
+    height: 70px;
+}
+
+/* Estilos para o menu de navegação */
+.menu {
+    display: flex;
+}
+
+.menu li {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para os links dentro dos itens da lista */
+li a {
+    font-family: inherit;
+    color: inherit;
+}
+
+/* Estilos para a seção de login */
+.login {
+    display: flex;
+    align-items: center;
+    font-family: "Molengo", sans-serif;
+    color: #FEAB39;
+}
+
+.login img {
+    padding-left: 10px;
+}
+
 
 /* Seção com fundo desfocado */
 .blurred-section {
@@ -174,15 +237,20 @@ body {
 }
 
 /* Estilos para as imagens em primeiro plano */
-.foreground-images img {
-    width: 200px;
-    height: 300px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+.foreground-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* 100% * quantidade de imagens visíveis */
 }
 
-.foreground-images img:nth-of-type(2) {
-    margin: 0 100px;
+.foreground-images img {
+    max-width: 200px;
+    max-height: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 0 120spx;
+    flex-shrink: 0;
+    height: auto;
 }
 
 /* Indicadores de pontos (dots) */
@@ -260,6 +328,7 @@ body {
 .blurred-section .arrow-right:hover {
     transform: translateY(-50%) scale(1.2);
 }
+
 
 /* Estilos para o rodapé */
 footer {
