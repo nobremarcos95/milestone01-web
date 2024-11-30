@@ -1,15 +1,9 @@
-// Mocking database
-const logins = [
-  { email: 'teste@test.com', password: 'hello1234' },
-];
 
-// Check if email and password are correct
-const checkCredentials = (email, password) => {
-  return logins.some(loginData => loginData.email === email
-    && loginData.password === password);
-};
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Atualizar o cabeçalho ao carregar a página
+  updateHeader();
+
   // Social login
   const socialLoginButtons = document.querySelectorAll('.social-login button');
   socialLoginButtons.forEach(button => button.addEventListener('click', () => {
@@ -35,15 +29,25 @@ document.addEventListener('DOMContentLoaded', () => {
       alert("Você precisa confirmar que não é um robô!");
       return;
     }
-    
-    // Check if credentials are valid
-    const loginFound = checkCredentials(email, password);
-    const homeURL = window.location.href.split('/').slice(0,-1).join('/')+'/home.html';
-    if (loginFound) {
-      alert("Login realizado com sucesso! Você será redirecionado para a home");
-      window.location.replace(homeURL);
+
+    const user = checkCredentials(email, password);
+    if (user) {
+      alert("Login realizado com sucesso!");
+      sessionStorage.setItem('user', JSON.stringify(user));
+      updateHeader();
+      window.location.href = 'home.html'
     } else {
       alert("Login não encontrado!");
     }
   });
 });
+
+// Mocking database
+const logins = [
+  { email: 'teste@test.com', password: 'hello1234', name: 'Teste User' },
+];
+
+const checkCredentials = (email, password) => {
+  return logins.find(loginData => loginData.email === email
+    && loginData.password === password);
+};
