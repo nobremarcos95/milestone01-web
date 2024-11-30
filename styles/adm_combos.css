@@ -1,0 +1,357 @@
+/* Reset de estilos para todos os elementos */
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Montserrat", sans-serif;
+    
+}
+/* Cor de fundo do corpo */
+body {
+    background-color: whitesmoke;
+}
+/* Estilo do cabeçalho de largura total */
+header {
+    background: #480708;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilos para o ícone do menu */
+.menu-icon {
+    display: flex;
+    align-items: center;
+}
+
+
+.menu-icon div {
+    font-family: "Molengo", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #FEAB39;
+}
+
+.Popcorn_image {
+    height: 70px;
+}
+
+/* Estilos para o menu */
+.menu {
+    display: flex;
+    font-size: 25px;
+}
+
+.menu li {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+/* Estilo para os links dentro dos itens da lista */
+li a {
+    font-family: inherit;
+    color:inherit; 
+
+}
+/* Hover effects */
+.menu li:hover,
+.login:hover {
+    cursor: pointer;
+    color: #FEAB39;
+}
+
+
+/* Estilos para a seção de login */
+.login {
+    display: flex;/* Reset de estilos para todos os elementos */
+    * {
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 1.2rem;
+        font-family: Arial, sans-serif;
+        
+    }
+    /* Cor de fundo do corpo */
+    body {
+        background-color: #340304;
+    }
+    
+    /* Estilo do cabeçalho de largura total */
+    header {
+        background: #480708;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Estilos para o ícone do menu */
+    .menu-icon {
+        display: flex;
+        align-items: center;
+    }
+    
+    
+    .menu-icon div {
+        font-family: "Molengo", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #FEAB39;
+    }
+    
+    .Popcorn_image {
+        height: 70px;
+    }
+    
+    /* Estilos para o menu */
+    .menu {
+        display: flex;
+        
+    }
+
+    .menu li {
+        font-family: "Montserrat", sans-serif;
+        color: white;
+        margin-left: 40px;
+        margin-bottom: 10px;
+    }
+    
+    /* Estilo para os links dentro dos itens da lista */
+    li a {
+        font-family: inherit;
+        color:inherit; 
+        font-size: 20px;
+    }
+    /* Hover effects */
+    .menu li:hover,
+    .login:hover {
+        cursor: pointer;
+        color: #FEAB39;
+    }
+    
+    
+    /* Estilos para a seção de login */
+    .login {
+        display: flex;
+        align-items: center;
+        font-family: "Molengo", sans-serif;
+        color: #FEAB39;
+    }
+    .login img {
+        padding-left: 10px;
+    }
+    align-items: center;
+    font-family: "Molengo", sans-serif;
+    color: #FEAB39;
+}
+
+.login img {
+    padding-left: 10px;
+}
+
+/*Rest of the body*/
+#tema_pagina{
+    margin: 20px;
+    padding: 95px;
+    align-items: center;
+}
+
+#tema_pagina img{
+    position: absolute; 
+    width: 100px;
+    height: 100px;
+    top: 150px; /* y do Figma */
+    left: 71px; /* x do Figma */ 
+}
+
+#tema_pagina h1{
+    font-family: "Montserrat", sans-serif;
+    font-size: 48px;
+    font-weight: 300;
+    position: absolute; 
+    top: 180px; /* y do Figma */
+    left: 175px; /* x do Figma */  
+}
+
+/*Seleção do combo*/
+
+/* Estilização geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0px;
+}
+
+/* Container principal */
+#texto-introducao{
+    font-size: 23px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.selecao-combo {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Label */
+.selecao-combo label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Container do input e botão */
+.input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Input */
+.selecao-combo input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.selecao-combo input:focus {
+    border-color: #ff0000;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+/* Botão */
+.show-options-btn {
+    background-color: #480708;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    color: #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.show-options-btn:hover {
+    background-color: #990005;
+}
+
+/* Responsividade */
+@media (max-width: 500px) {
+    .selecao-combo {
+        padding: 15px;
+    }
+
+    .show-options-btn {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .selecao-combo input {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+.combo-details {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.combo-details h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.combo-details img {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.combo-details form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.combo-details form input,
+.combo-details form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-buttons button {
+    background-color: #480708;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-buttons button:hover {
+    background-color: #990005;
+}
+
+.combo-actions {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.combo-actions button {
+    background-color: #480708;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.combo-actions button:hover {
+    background-color: #990005;
+}
+
+

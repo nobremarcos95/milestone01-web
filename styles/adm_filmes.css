@@ -1,0 +1,342 @@
+/* Reset de estilos para todos os elementos */
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Montserrat", sans-serif;
+    
+}
+/* Cor de fundo do corpo */
+body {
+    background-color: whitesmoke;
+}
+/* Estilo do cabeçalho de largura total */
+header {
+    background: #480708;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilos para o ícone do menu */
+.menu-icon {
+    display: flex;
+    align-items: center;
+}
+
+
+.menu-icon div {
+    font-family: "Molengo", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #FEAB39;
+}
+
+.Popcorn_image {
+    height: 70px;
+}
+
+/* Estilos para o menu */
+.menu {
+    display: flex;
+    font-size: 25px;
+}
+
+.menu li {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+/* Estilo para os links dentro dos itens da lista */
+li a {
+    font-family: inherit;
+    color:inherit; 
+
+}
+/* Hover effects */
+.menu li:hover,
+.login:hover {
+    cursor: pointer;
+    color: #FEAB39;
+}
+
+
+/* Estilos para a seção de login */
+.login {
+    display: flex;/* Reset de estilos para todos os elementos */
+    * {
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 1.2rem;
+        font-family: Arial, sans-serif;
+        
+    }
+    /* Cor de fundo do corpo */
+    body {
+        background-color: #340304;
+    }
+    
+    /* Estilo do cabeçalho de largura total */
+    header {
+        background: #480708;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Estilos para o ícone do menu */
+    .menu-icon {
+        display: flex;
+        align-items: center;
+    }
+    
+    
+    .menu-icon div {
+        font-family: "Molengo", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #FEAB39;
+    }
+    
+    .Popcorn_image {
+        height: 70px;
+    }
+    
+    /* Estilos para o menu */
+    .menu {
+        display: flex;
+        
+    }
+
+    .menu li {
+        font-family: "Montserrat", sans-serif;
+        color: white;
+        margin-left: 40px;
+        margin-bottom: 10px;
+    }
+    
+    /* Estilo para os links dentro dos itens da lista */
+    li a {
+        font-family: inherit;
+        color:inherit; 
+        font-size: 20px;
+    }
+    /* Hover effects */
+    .menu li:hover,
+    .login:hover {
+        cursor: pointer;
+        color: #FEAB39;
+    }
+    
+    
+    /* Estilos para a seção de login */
+    .login {
+        display: flex;
+        align-items: center;
+        font-family: "Molengo", sans-serif;
+        color: #FEAB39;
+    }
+    .login img {
+        padding-left: 10px;
+    }
+    align-items: center;
+    font-family: "Molengo", sans-serif;
+    color: #FEAB39;
+}
+
+.login img {
+    padding-left: 10px;
+}
+
+/*Rest of the body*/
+#tema_pagina{
+    margin: 20px;
+    padding: 95px;
+    align-items: center;
+}
+
+#tema_pagina img{
+    position: absolute; 
+    top: 150px; /* y do Figma */
+    left: 71px; /* x do Figma */ 
+}
+
+#tema_pagina h1{
+    font-family: "Montserrat", sans-serif;
+    font-size: 48px;
+    font-weight: 300;
+    position: absolute; 
+    top: 180px; /* y do Figma */
+    left: 184px; /* x do Figma */  
+}
+
+/* Container que organiza os filmes */
+.filmes-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 20px;
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+  
+  /* Bloco individual do filme */
+  .filme-bloco {
+    border: 5px dashed black;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #fff;
+    width: 300px;
+  }
+  
+  /* Título e descrição do filme */
+  .titulo-filme {
+    font-size: 18px;
+    margin: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .descricao-filme {
+    font-size: 14px;
+    height: 60px; /* Controla a altura máxima */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Imagem do filme */
+  .filme-bloco img {
+    max-width: 200px;
+    max-height: 300px;
+    border-radius: 15px;
+    border: 2px solid black;
+    margin-bottom: 10px;
+
+  }
+  
+  /* Botão de editar */
+  .editar-btn {
+    background-color: #d32f2f;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .editar-btn:hover {
+    background-color: #b71c1c;
+  }
+
+  .editar-btn:active {
+    transform: scale(0.95); /* Reduz ligeiramente quando clicado */
+    background-color: #a00000;
+ }
+
+ .filme-bloco.editando {
+    border-color: #FEAB39;
+    background-color: #fdf4e3;
+    transition: all 0.3s ease-in-out;
+}
+
+.editar-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.editar-form label {
+    font-size: 14px;
+    color: #333;
+}
+
+.editar-form input,
+.editar-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.salvar-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.salvar-btn:hover {
+    background-color: #218838;
+}
+
+.cancelar-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancelar-btn:hover {
+    background-color: #c82333;
+}
+
+/* Expande o bloco quando estiver no modo de edição */
+.filme-bloco.editando {
+    border: 5px dashed #ff5733; /* Apenas um exemplo, mude conforme o design */
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Estilo para os campos de edição */
+.edit-container {
+    margin-top: 15px;
+}
+
+.edit-container label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.edit-container input,
+.edit-container textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.edit-container button.salvar-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-container button.salvar-btn:hover {
+    background-color: #218838;
+}
+
+  
