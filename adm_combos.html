@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Font Montserrat-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+
+    <title>Administração Filmes</title>
+    <link rel="stylesheet" href="/styles/adm_combos.css" />
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <div class="menu-icon">
+            <img src="images/icons8-popcorn-48.png" class="Popcorn_image">
+            <div>
+                Cine<br>
+                São Carlos
+            </div>
+        </div>
+        <ul class="menu">
+            <li><a href="adm_filmes.html">Filmes</a></li>
+            <li><a href="adm_combos.html">Combos</a></li>
+            <li><a href="#">Cinema</a></li>
+        </ul>
+        <a href="login.html">
+            <div class="login">
+                Administador
+                <img src="images/Vector.svg">
+            </div>
+        </a>
+    </header>
+
+    <div id="tema_pagina">
+        <img src="images/combos-adm.png" alt="simbolo filme">
+        <h1>Combos</h1>
+
+    </div>
+
+    <div class="selecao-combo">
+        <label for="combos-choice" id="texto-introducao">Escolha o combo a ser editado:</label>
+        <div class="input-container">
+            <!-- Input de texto vinculado ao datalist -->
+            <input 
+                list="combos" 
+                id="combos-choice" 
+                name="combos-choice" 
+                placeholder="Selecione ou digite um combo" 
+                aria-label="Escolha o combo para editar" />
+            
+            <!-- Botão para exibir as opções (se for necessário JavaScript adicional) -->
+            <button 
+                type="button" 
+                class="show-options-btn" 
+                aria-label="Exibir opções do combo">▼</button>
+        </div>
+    
+        <!-- Datalist para as opções -->
+        <datalist id="combos">
+            <!-- Opções são geradas dinamicamente -->
+        </datalist>
+    </div>
+    
+
+    <div class="combo-actions">
+        <button type="button" id="add-combo">Adicionar Combo</button>
+    </div>
+    <div class="combo-details" style="display: none;">
+        <h2 id="combo-details-title">Detalhes do Combo</h2>
+        <img id="combo-image" src="" alt="Imagem do Combo" />
+        <form id="combo-form">
+            <label for="combo-name">Nome:</label>
+            <input type="text" id="combo-name" name="combo-name" required />
+            
+            <label for="combo-price">Preço:</label>
+            <input type="number" id="combo-price" name="combo-price" step="0.01" required />
+            
+            <label for="combo-description">Descrição:</label>
+            <textarea id="combo-description" name="combo-description" rows="3"></textarea>
+            
+            <label for="combo-image-input">Imagem:</label>
+            <input type="file" id="combo-image-input" accept="image/*" />
+            
+            <div class="form-buttons">
+                <button type="button" id="save-combo">Salvar</button>
+                <button type="button" id="delete-combo" style="display: none;">Deletar</button>
+            </div>
+        </form>
+    </div>
+    
+    
+    
+    
+
+</body>
+
+</html>
+<script src="js/adm_combos.js"></script>
