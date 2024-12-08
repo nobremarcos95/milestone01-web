@@ -1,4 +1,12 @@
+// Mocking database
+const logins = [
+  { email: 'teste@test.com', password: 'hello1234', name: 'Teste User' },
+];
 
+const checkCredentials = (email, password) => {
+  return logins.find(loginData => loginData.email === email
+    && loginData.password === password);
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   // Atualizar o cabeçalho ao carregar a página
@@ -41,13 +49,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-// Mocking database
-const logins = [
-  { email: 'teste@test.com', password: 'hello1234', name: 'Teste User' },
-];
-
-const checkCredentials = (email, password) => {
-  return logins.find(loginData => loginData.email === email
-    && loginData.password === password);
-};
