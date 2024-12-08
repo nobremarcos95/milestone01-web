@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Combos</title>
+        <link rel="stylesheet" href="/styles/combos.css" />
+        <link rel="stylesheet" href="/styles/cart.css" />
+    </head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="menu-icon">
+            <img src="/images/icons8-popcorn-48.png" class="Popcorn_image">
+            <div>
+                Cine<br>
+                São Carlos
+            </div>
+        </div>
+        <ul class="menu">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/enderecoecontato">Cinema </a><img src="/images/down-arrow.svg"></li>
+            <li><a href="/filmes">Filmes</a></li>
+            <li><a href="/combos">Combos</a></li>
+        </ul>
+        <a id="login-link" href="/login">
+            <div class="login">
+                <span id="login-text">Entrar</span>
+                <img src="/images/Vector.svg" id="login-icon">
+            </div>
+        </a>
+        
+    </header>
+
+    <!-- Top section with Combos text and market cart -->
+    <div class="top-section">
+        <div class="combos">Combos</div>
+        <div class="cart-icon">
+            <img src="/images/market-cart.svg" alt="cart">
+            <div class="cart-counter">0</div> <!-- Contador de itens no carrinho -->
+        </div>
+    </div>
+    
+
+    <!-- Combo section where combos will be dynamically generated -->
+    <div class="combo-container-wrapper">
+        <!-- Os combos serão adicionados dinamicamente pelo combos.js -->
+    </div>
+
+    <footer>
+        <div class="footer">
+            Acompanhe nossas redes! 
+            <div class="social-media">
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="/images/Instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="/images/Facebook.png" alt="Facebook">
+                </a>
+                <a href="https://twitter.com" target="_blank">
+                    <img src="/images/X Coordinate.png" alt="X">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Incluindo os arquivos JavaScript -->
+    <script src="/js/combos.js"></script>
+    <script src="/js/cart.js"></script>
+    <!-- <script src="js/check_login.js"></script> -->
+</body>
+</html>
