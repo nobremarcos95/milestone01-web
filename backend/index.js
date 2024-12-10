@@ -1,5 +1,5 @@
 import express from "express";
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 import User from './models/User.js';
 
@@ -10,18 +10,6 @@ app.use(express.json());
 app.get('/', (req, res) => {});
 
 app.get('/films', (req, res) => {});
-
-app.post('/login', async (req, res) => {
-  const { username = '', password = '' } = req.body;
-
-  const result = await User.find({ username, password }).exec();
-  return res.json(!!result.length);
-});
-
-app.delete('/delete-all', async (req, res) => {
-  const result = await User.deleteMany();
-  return res.json(result);
-});
 
 app.get('/users', async (req, res) => {
   const users = await User.find();
@@ -45,7 +33,18 @@ app.post('/signup', async (req, res) => {
   } catch (error) {
     return res.json(error.message);
   }
+});
 
+app.post('/login', async (req, res) => {
+  const { username = '', password = '' } = req.body;
+
+  const result = await User.find({ username, password }).exec();
+  return res.json(!!result.length);
+});
+
+app.delete('/delete-all', async (req, res) => {
+  const result = await User.deleteMany();
+  return res.json(result);
 });
 
 app.listen(3000, () => {
