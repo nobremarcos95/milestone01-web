@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 
 
-// const conn = 'mongodb+srv://web-user:i3FXCgZtjIXViEve@web.iyhbl.mongodb.net/test?retryWrites=true&w=majority&appName=web';
-
+const conn = 'mongodb+srv://web-user:i3FXCgZtjIXViEve@web.iyhbl.mongodb.net/test?retryWrites=true&w=majority&appName=web';
 const connect = mongoose.connect('mongodb://localhost:27017');
 
 connect
