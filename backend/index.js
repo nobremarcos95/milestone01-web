@@ -87,6 +87,13 @@ app.delete('/delete-users', async (req, res) => {
   return res.json(oi);
 });
 
+app.delete('/delete-combo/:id', async (req, res) => {
+  const { id = '' } = req.params;
+
+  const result = await Combo.deleteOne({ _id: id }).exec();
+  return res.json(result);
+});
+
 app.listen(3000, () => {
   console.log('Server listening on port 3000');
 });

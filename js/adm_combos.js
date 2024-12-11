@@ -15,15 +15,12 @@ window.addEventListener('load', async function () {
 });
 
 // Função para exibir os detalhes de um combo selecionado
-function displayComboDetails(comboName) {
-    const combo = combosData[comboName];
-
+function displayComboDetails(combo) {
     if (combo) {
         // Preencher os campos do formulário com os dados do combo
         comboForm["combo-name"].value = combo.name;
         comboForm["combo-price"].value = combo.price;
         comboForm["combo-description"].value = combo.description;
-        document.getElementById('combo-image').src = combo.image || "placeholder.png";
 
         // Tornar os detalhes visíveis
         comboDetails.style.display = 'block';
@@ -55,9 +52,10 @@ updateDatalist();
 // Evento para quando um combo existente é selecionado
 comboChoice.addEventListener('change', function () {
     const selectedCombo = comboChoice.value;
+    const combo = combosData.find(combo => combo.name === selectedCombo);
 
-    if (combosData[selectedCombo]) {
-        displayComboDetails(selectedCombo);
+    if (combo) {
+        displayComboDetails(combo);
     } else {
         // Esconder os detalhes caso nenhum combo válido seja selecionado
         comboDetails.style.display = 'none';
@@ -68,7 +66,6 @@ comboChoice.addEventListener('change', function () {
 addComboButton.addEventListener('click', function () {
     // Limpar o formulário
     comboForm.reset();
-    document.getElementById('combo-image').src = "placeholder.png";
 
     // Exibir os detalhes do combo
     comboDetails.style.display = 'block';
@@ -97,7 +94,7 @@ saveButton.addEventListener('click', async function () {
         });
 
         const response = await promise.json();
-        console.log('oi', response);
+
         // Atualizar o datalist
         updateDatalist();
     } else {
@@ -108,13 +105,16 @@ saveButton.addEventListener('click', async function () {
 // Evento para deletar um combo
 deleteButton.addEventListener('click', function () {
     const comboName = comboForm["combo-name"].value;
+    const combo = combosData.find(combo => combo.name === comboName);
 
-    if (comboName && combosData[comboName]) {
-        delete combosData[comboName];
-        alert(`Combo "${comboName}" foi deletado!`);
+    if (combo) {
+        const url = 'http://localhost:3000/delete-combo/' + combo._id;
+        fetch(url, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+        });
 
-        // Atualizar o datalist
-        updateDatalist();
+        window.location.reload();
 
         // Esconder o formulário
         comboDetails.style.display = 'none';
