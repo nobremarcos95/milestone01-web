@@ -18,36 +18,37 @@ document.addEventListener("DOMContentLoaded", async function () {
     const comboContainerWrapper = document.querySelector(".combo-container-wrapper");
 
     combos.forEach((combo, index) => {
-        const comboContainer = document.createElement("div");
-        comboContainer.classList.add("combo-container");
-        comboContainer.setAttribute("data-name", combo.name);
-        comboContainer.setAttribute("data-price", combo.price);
+      const comboContainer = document.createElement("div");
+      comboContainer.classList.add("combo-container");
+      comboContainer.setAttribute("data-name", combo.name);
+      comboContainer.setAttribute("data-price", combo.price);
 
-        const comboImage = document.createElement("img");
-        comboImage.src = placeholderImages[index].image;
-        comboImage.alt = combo.name;
-        comboContainer.appendChild(comboImage);
+      const comboImage = document.createElement("img");
+      const imgIndex = index >= placeholderImages.length ? 1 : index;
+      comboImage.src = placeholderImages[imgIndex].image;
+      comboImage.alt = combo.name;
+      comboContainer.appendChild(comboImage);
 
-        const comboBottom = document.createElement("div");
-        comboBottom.classList.add("combo-container-bottom");
+      const comboBottom = document.createElement("div");
+      comboBottom.classList.add("combo-container-bottom");
 
-        const comboText = document.createElement("div");
-        comboText.classList.add("combo-text");
-        comboText.innerHTML = combo.description.join("<br>");
-        comboBottom.appendChild(comboText);
+      const comboText = document.createElement("div");
+      comboText.classList.add("combo-text");
+      comboText.innerHTML = combo.description.join("<br>");
+      comboBottom.appendChild(comboText);
 
-        const addButton = document.createElement("img");
-        addButton.src = "images/add-button.svg";
-        addButton.alt = "add-button";
-        addButton.classList.add("add-button"); // Adiciona a classe para identificar no cart.js
-        comboBottom.appendChild(addButton);
+      const addButton = document.createElement("img");
+      addButton.src = "images/add-button.svg";
+      addButton.alt = "add-button";
+      addButton.classList.add("add-button"); // Adiciona a classe para identificar no cart.js
+      comboBottom.appendChild(addButton);
 
-        comboContainer.appendChild(comboBottom);
+      comboContainer.appendChild(comboBottom);
 
-        const comboPrice = document.createElement("h3");
-        comboPrice.textContent = `R$ ${combo.price}`;
-        comboContainer.appendChild(comboPrice);
+      const comboPrice = document.createElement("h3");
+      comboPrice.textContent = `R$ ${combo.price}`;
+      comboContainer.appendChild(comboPrice);
 
-        comboContainerWrapper.appendChild(comboContainer);
+      comboContainerWrapper.appendChild(comboContainer);
     });
 });

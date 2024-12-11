@@ -7,17 +7,12 @@ const saveButton = document.getElementById('save-combo');
 const addComboButton = document.getElementById('add-combo');
 const comboDatalist = document.getElementById('combos'); // Datalist para os combos
 
+let combosData;
+
 // Limpar o campo de seleção de combo ao carregar a página
-window.addEventListener('load', function () {
+window.addEventListener('load', async function () {
     comboChoice.value = ""; // Define o campo como vazio
 });
-
-// Dados simulados para os combos existentes
-const combosData = {
-    "Combo 01": { name: "Combo 01", price: 15.99, description: "Pipoca pequena + refrigerante pequeno", image: "" },
-    "Combo 02": { name: "Combo 02", price: 22.99, description: "Pipoca média + refrigerante médio", image: "" },
-    "Combo 03": { name: "Combo 03", price: 29.99, description: "Pipoca grande + refrigerante grande", image: "" },
-};
 
 // Função para exibir os detalhes de um combo selecionado
 function displayComboDetails(comboName) {
@@ -39,11 +34,17 @@ function displayComboDetails(comboName) {
 }
 
 // Função para atualizar o datalist com os combos existentes
-function updateDatalist() {
+async function updateDatalist() {
     comboDatalist.innerHTML = ""; // Limpar o datalist atual
-    Object.keys(combosData).forEach(comboName => {
+
+    const promise = await fetch('http://localhost:3000/list-combos', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      });
+    combosData = await promise.json();
+    combosData.forEach((combo) => {
         const option = document.createElement('option');
-        option.value = comboName;
+        option.value = combo.name;
         comboDatalist.appendChild(option);
     });
 }
@@ -77,20 +78,26 @@ addComboButton.addEventListener('click', function () {
 });
 
 // Evento para salvar um combo (simulação)
-saveButton.addEventListener('click', function () {
+saveButton.addEventListener('click', async function () {
     const comboName = comboForm["combo-name"].value;
-    const comboPrice = parseFloat(comboForm["combo-price"].value);
+    const comboPrice = comboForm["combo-price"].value;
     const comboDescription = comboForm["combo-description"].value;
 
-    if (comboName && !isNaN(comboPrice)) {
-        combosData[comboName] = {
+    if (comboName && comboPrice) {
+        const data = {
             name: comboName,
+            description: comboDescription.split(', '),
             price: comboPrice,
-            description: comboDescription,
-            image: document.getElementById('combo-image').src,
         };
-        alert(`Combo "${comboName}" foi salvo com sucesso!`);
 
+        const promise = await fetch('http://localhost:3000/add-combo', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+        });
+
+        const response = await promise.json();
+        console.log('oi', response);
         // Atualizar o datalist
         updateDatalist();
     } else {
