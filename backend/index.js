@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 
 import User from './models/User.js';
+import Combo from './models/Combo.js';
 
 const app = express();
 
@@ -21,7 +22,7 @@ app.get('/', (req, res) => {});
 app.get('/films', (req, res) => {});
 
 app.get('/users', async (req, res) => {
-  const users = await User.find();
+  const users = await User.find().exec();
   return res.json(users);
 });
 
@@ -51,9 +52,33 @@ app.post('/login', async (req, res) => {
   return res.json(result);
 });
 
-app.delete('/delete-all', async (req, res) => {
-  const result = await User.deleteMany();
-  return res.json(result);
+app.post('/add-combo', async (req, res) => {
+  const {
+    name = '',
+    description = [],
+    price = '',
+  } = req.body;
+
+  const combo = {
+    name,
+    description,
+    price,
+  };
+
+  try {
+    const comboExists = await Combo.find(combo).exec();
+    if (comboExists.length) return res.json("Combo already exists");
+
+    const result = await Combo.create(combo);
+    return res.json(result);
+  } catch (error) {
+    return res.json(error.message);
+  }
+});
+
+app.get('/list-combos', async (req, res) => {
+  const combos = await Combo.find().exec();
+  return res.json(combos);
 });
 
 app.listen(3000, () => {
@@ -61,5 +86,5 @@ app.listen(3000, () => {
 });
 
 mongoose.connect('mongodb://localhost:27017/test')
-  .then(() => console.log('deu bom'))
-  .catch(() => console.log('deu ruim'));
+  .then(() => console.log('DB deu bom'))
+  .catch(() => console.log('DB deu ruim'));

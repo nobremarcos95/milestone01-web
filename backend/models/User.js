@@ -7,6 +7,4 @@ const userSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now() },
 });
 
-const filmSchema = new mongoose.Schema();
-
 export default mongoose.model('User', userSchema);
