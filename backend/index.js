@@ -27,11 +27,12 @@ app.get('/users', async (req, res) => {
 });
 
 app.post('/signup', async (req, res) => {
-  const { username = '', name = '', password = '' } = req.body;
+  const { username = '', name = '', password = '', role = 'user' } = req.body;
   const newUser = {
     username,
     name,
     password,
+    role,
   };
 
   try {
@@ -79,6 +80,11 @@ app.post('/add-combo', async (req, res) => {
 app.get('/list-combos', async (req, res) => {
   const combos = await Combo.find().exec();
   return res.json(combos);
+});
+
+app.delete('/delete-users', async (req, res) => {
+  const oi = await User.deleteMany();
+  return res.json(oi);
 });
 
 app.listen(3000, () => {

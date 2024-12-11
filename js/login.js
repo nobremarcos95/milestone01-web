@@ -42,8 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     alert("Login realizado com sucesso!");
-    sessionStorage.setItem('user', JSON.stringify({ ...data, name: result[0].name }));
+    const user = result[0];
+    sessionStorage.setItem('user', JSON.stringify({ ...data, name: user.name }));
     updateHeader();
-    window.location.href = 'home.html';
+    if (user.role === 'admin') window.location.href = 'adm_combos.html';
+    else window.location.href = 'home.html';
   });
 });
