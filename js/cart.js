@@ -52,26 +52,37 @@ document.addEventListener('DOMContentLoaded', () => {
       updateCartCounter();
     }
 
-    // Selecionar todos os botões de adicionar
-    const addButtons = document.querySelectorAll('.add-button');
+    function addListenerToButton() {
+      // Selecionar todos os botões de adicionar
+      const addButtons = document.querySelectorAll('.add-button');
+      console.log('addButtons oi', addButtons);
 
-    addButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        // Encontrar o elemento pai que contém os dados do combo
-        const comboContainer = button.closest('.combo-container');
-        const comboName = comboContainer.getAttribute('data-name');
-        const comboPrice = comboContainer.getAttribute('data-price');
-        const comboDescription = comboContainer.querySelector('.combo-text').innerText;
+      addButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          console.log('cliquei addButton')
+          // Encontrar o elemento pai que contém os dados do combo
+          const comboContainer = button.closest('.combo-container');
+          const comboName = comboContainer.getAttribute('data-name');
+          const comboPrice = comboContainer.getAttribute('data-price');
+          const comboDescription = comboContainer.querySelector('.combo-text').innerText;
 
-        const combo = {
-          name: comboName,
-          price: comboPrice,
-          description: comboDescription
-        };
+          console.log('comboName', comboName);
+          console.log('comboPrice', comboPrice);
+          console.log('comboDescription', comboDescription);
 
-        addToCart(combo);
+          const combo = {
+            name: comboName,
+            price: comboPrice,
+            description: comboDescription
+          };
+
+          addToCart(combo);
+        });
       });
-    });
+    }
+
+    // Wait for the combos to be loaded from db
+    window.setTimeout(addListenerToButton, 300);
 
     // Função para exibir o conteúdo do carrinho
     function displayCartContents() {
