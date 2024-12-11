@@ -1,13 +1,3 @@
-// Mocking database
-const logins = [
-  { email: 'teste@test.com', password: 'hello1234', name: 'Teste User' },
-];
-
-const checkCredentials = (email, password) => {
-  return logins.find(loginData => loginData.email === email
-    && loginData.password === password);
-};
-
 document.addEventListener('DOMContentLoaded', () => {
   // Atualizar o cabeçalho ao carregar a página
   updateHeader();
@@ -20,15 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Login button
   const loginButton = document.querySelector('#login-btn');
-  loginButton.addEventListener('click', (event) => {
+  loginButton.addEventListener('click', async (event) => {
     event.preventDefault();
 
     // Login with email and password
-    const email = document.querySelector('#email').value;
+    const username = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
     const isCaptchaChecked = document.querySelector('#recaptcha').checked;
 
-    if (!email || !password) {
+    if (!username || !password) {
       alert("Preencha seus dados de login!");
       return;
     }
@@ -38,14 +28,22 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const user = checkCredentials(email, password);
-    if (user) {
-      alert("Login realizado com sucesso!");
-      sessionStorage.setItem('user', JSON.stringify(user));
-      updateHeader();
-      window.location.href = 'home.html'
-    } else {
-      alert("Login não encontrado!");
+    const data = { username, password };
+    const promise = await fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    const result = await promise.json();
+
+    if (!result.length) {
+      alert('Login não encontrado!');
+      return;
     }
+
+    alert("Login realizado com sucesso!");
+    sessionStorage.setItem('user', JSON.stringify({ ...data, name: result[0].name }));
+    updateHeader();
+    window.location.href = 'home.html';
   });
 });
