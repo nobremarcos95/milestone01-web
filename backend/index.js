@@ -31,29 +31,48 @@ app.get('/users', async (req, res) => {
 
 // Rota para finalizar a compra
 app.post('/finalize-purchase', async (req, res) => {
-  const { cart, userId } = req.body;
+  const { cart, userId, cardId } = req.body;
 
   try {
-    // Verificar o estoque e atualizar
-    for (const item of cart) {
-      const combo = await Combo.findOne({ name: item.name });
-      if (!combo || combo.quant < item.quantity) {
-        return res.status(400).send({ message: `Estoque insuficiente para ${item.name}` });
-      }
-      combo.quant -= item.quantity;
-      await combo.save();
+    // Verifica se o cartão existe
+    const card = await Card.findById(cardId);
+    if (!card) {
+      return res.status(400).send({ message: 'Cartão não encontrado.' });
     }
+
+    // Verificar o estoque e atualizar
+    const comboUpdates = []; // Array para armazenar as promessas de atualização
+    for (const item of cart) {
+      const combo = await Combo.findOne({ name: item.name }); // Busca o combo pelo nome
+      if (!combo) {
+        return res.status(404).send({ message: `Combo "${item.name}" não encontrado.` });
+      }
+
+      if (combo.quant < item.quantity) {
+        return res.status(400).json({ message: `Não há o suficiente no estoque para "${item.name}".` });
+      }
+
+      combo.quant -= item.quantity; // Atualiza a quantidade
+      comboUpdates.push(combo.save()); // Salva o combo no banco de dados
+    }
+
+    // Aguarda todas as atualizações de estoque
+    await Promise.all(comboUpdates);
 
     // Criar o registro da compra
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const purchase = new Purchase({ userId, cart, total, date: new Date() });
     await purchase.save();
 
-    res.status(200).send({ message: 'Compra realizada com sucesso!', purchase });
+    // Envia mensagem de sucesso
+    return res.status(200).json({ message: 'SUCESSO! Compra realizada com sucesso!', purchase });
   } catch (error) {
-    res.status(500).send({ message: 'Erro ao finalizar compra', error });
+    console.error('Erro ao finalizar compra:', error);
+    return res.status(500).json({ message: 'Erro interno no sistema.', error: error.message });
   }
 });
+
+
 
 
 // Rota para listar todos os cartões
@@ -69,21 +88,12 @@ app.get('/list-cards', async (req, res) => {
 
 // Rota para deletar um cartão
 app.delete('/delete-card/:id', async (req, res) => {
-  console.log('Rota DELETE /delete-card/:id chamada'); // Adicionando log
-  const { id } = req.params;
+  const { id = '' } = req.params;
 
-  try {
-    const card = await Card.findById(id);
-    if (!card) {
-      return res.status(404).json({ message: 'Cartão não encontrado' });
-    }
-    await card.remove();
-    return res.status(200).json({ message: 'Cartão excluído com sucesso' });
-  } catch (error) {
-    console.error('Erro ao excluir cartão:', error);
-    return res.status(500).json({ message: 'Erro ao excluir cartão' });
-  }
+  const result = await Card.deleteOne({ _id: id }).exec();
+  return res.json(result);
 });
+
 
 
 
