@@ -149,22 +149,55 @@ document.addEventListener('DOMContentLoaded', () => {
   cartContentsDiv.addEventListener('mouseleave', hideCart);
 
   // Delegação de eventos para os botões de remoção
-  cartContentsDiv.addEventListener('click', (event) => {
-    if (event.target.classList.contains('remove-button')) {
-      event.stopPropagation();
-      const index = event.target.getAttribute('data-index');
-      removeFromCart(index);
-  
-      // Atualizar o conteúdo do carrinho após a remoção
-      cartContentsDiv.innerHTML = displayCartContents();
-    }
-  
+  cartContentsDiv.addEventListener('click', async (event) => {
     if (event.target.classList.contains('finalize-button')) {
       event.stopPropagation();
-  
-      // Redirecionar para a página de cadastro de cartão
-      window.location.href = 'cadCartao.html';
+    
+      const cart = loadCart();
+    
+      const option = confirm("Deseja usar um cartão existente? Clique em 'OK' para usar um cartão existente ou 'Cancelar' para cadastrar um novo.");
+    
+      if (!option) {
+        alert('Você será redirecionado para cadastrar um novo cartão.');
+        window.location.href = 'cadCartao.html';
+        return;
+      }
+    
+      const cardId = prompt('Digite o ID do cartão cadastrado:');
+      if (!cardId) {
+        alert('Você precisa fornecer o ID do cartão para prosseguir.');
+        return;
+      }
+    
+      try {
+        const response = await fetch('http://localhost:3000/finalize-purchase', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ cart, userId: '123', cardId }), // Substitua userId por um valor real
+        });
+    
+        const data = await response.json();
+        if (response.ok) {
+          alert(data.message);
+    
+          // Limpa o carrinho após a compra
+          sessionStorage.removeItem('cart');
+          updateCartCounter();
+        } else {
+          alert(data.message); // Exibe mensagens de erro específicas
+        }
+      } catch (error) {
+        console.error('Erro ao finalizar compra:', error);
+        alert('Erro ao finalizar compra.');
+      }
     }
+    
+    
   });
   
+  
+
+
+
+
 });
