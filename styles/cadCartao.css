@@ -1,0 +1,160 @@
+/* Reset de estilos para todos os elementos */
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial, sans-serif;
+
+}
+
+/* Cor de fundo do corpo */
+body {
+    background-color: #340304;
+}
+
+/* Estilo do cabeçalho de largura total */
+header {
+    background: #480708;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilos para o ícone do menu */
+.menu-icon {
+    display: flex;
+    align-items: center;
+}
+
+
+.menu-icon div {
+    font-family: "Molengo", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #FEAB39;
+}
+
+.Popcorn_image {
+    height: 70px;
+}
+
+/* Estilos para o menu */
+.menu {
+    display: flex;
+}
+
+.menu li {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para os links dentro dos itens da lista */
+li a {
+    font-family: inherit;
+    color: inherit;
+
+}
+
+/* Hover effects */
+.menu li:hover,
+.login:hover {
+    cursor: pointer;
+    color: #FEAB39;
+}
+
+
+/* Estilos para a seção de login */
+.login {
+    display: flex;
+    align-items: center;
+    font-family: "Molengo", sans-serif;
+    color: #FEAB39;
+}
+
+.login img {
+    padding-left: 10px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    text-align: center;
+    background-color: #250203;
+}
+
+h1{
+    color: rgb(255, 196, 1);
+    padding: 10px;
+}
+
+form {
+    display: inline-block;
+    text-align: left;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #e6dede;
+}
+
+form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff0000;
+    color: #fff;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #b30000;
+}
+
+/* Estilos para o rodapé */
+footer {
+    background: linear-gradient(0deg, #000000, #340304);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 100px;
+    margin-top: 200px;
+}
+
+.footer {
+    align-items: flex-end;
+    color: white;
+    bottom: 0;
+    text-align: center;
+}
+
+/* Estilos para as mídias sociais no rodapé */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-media a {
+    display: inline-block;
+}
+
+.social-media img {
+    width: 40px;
+    height: 40px;
+}
