@@ -4,6 +4,8 @@ import cors from 'cors';
 
 import User from './models/User.js';
 import Combo from './models/Combo.js';
+import Card from './models/Card.js';
+import Purchase from './models/Purchase.js';
 
 const app = express();
 
@@ -25,6 +27,91 @@ app.get('/users', async (req, res) => {
   const users = await User.find().exec();
   return res.json(users);
 });
+ 
+
+// Rota para finalizar a compra
+app.post('/finalize-purchase', async (req, res) => {
+  const { cart, userId } = req.body;
+
+  try {
+    // Verificar o estoque e atualizar
+    for (const item of cart) {
+      const combo = await Combo.findOne({ name: item.name });
+      if (!combo || combo.quant < item.quantity) {
+        return res.status(400).send({ message: `Estoque insuficiente para ${item.name}` });
+      }
+      combo.quant -= item.quantity;
+      await combo.save();
+    }
+
+    // Criar o registro da compra
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const purchase = new Purchase({ userId, cart, total, date: new Date() });
+    await purchase.save();
+
+    res.status(200).send({ message: 'Compra realizada com sucesso!', purchase });
+  } catch (error) {
+    res.status(500).send({ message: 'Erro ao finalizar compra', error });
+  }
+});
+
+
+// Rota para listar todos os cartões
+app.get('/list-cards', async (req, res) => {
+  try {
+    const cards = await Card.find(); // Busca todos os cartões no banco
+    res.status(200).json(cards); // Retorna os cartões em formato JSON
+  } catch (error) {
+    res.status(500).send({ message: 'Erro ao listar cartões', error });
+  }
+});
+
+
+// Rota para deletar um cartão
+app.delete('/delete-card/:id', async (req, res) => {
+  console.log('Rota DELETE /delete-card/:id chamada'); // Adicionando log
+  const { id } = req.params;
+
+  try {
+    const card = await Card.findById(id);
+    if (!card) {
+      return res.status(404).json({ message: 'Cartão não encontrado' });
+    }
+    await card.remove();
+    return res.status(200).json({ message: 'Cartão excluído com sucesso' });
+  } catch (error) {
+    console.error('Erro ao excluir cartão:', error);
+    return res.status(500).json({ message: 'Erro ao excluir cartão' });
+  }
+});
+
+
+
+
+
+
+// Endpoint para adicionar cartão
+app.post('/add-card', async (req, res) => {
+  try {
+    const { cardNumber, cardName, cardExpiration, cardCVV } = req.body;
+
+    if (!cardNumber || !cardName || !cardExpiration || !cardCVV) {
+      return res.status(400).json({ message: "Todos os campos são obrigatórios." });
+    }
+
+    // Criar e salvar o cartão
+    const newCard = new Card({ cardNumber, cardName, cardExpiration, cardCVV });
+    await newCard.save();
+
+    res.status(201).json({ message: "Cartão cadastrado com sucesso!" });
+  } catch (error) {
+    console.error("Erro ao adicionar cartão:", error);
+    res.status(500).json({ message: "Erro ao adicionar cartão." });
+  }
+});
+
+
+
 
 app.post('/signup', async (req, res) => {
   const { username = '', name = '', password = '', role = 'user' } = req.body;
@@ -54,28 +141,23 @@ app.post('/login', async (req, res) => {
 });
 
 app.post('/add-combo', async (req, res) => {
-  const {
-    name = '',
-    description = [],
-    price = '',
-  } = req.body;
-
-  const combo = {
-    name,
-    description,
-    price,
-  };
-
   try {
-    const comboExists = await Combo.find(combo).exec();
-    if (comboExists.length) return res.json("Combo already exists");
+      const { name, description, price, quant } = req.body;
 
-    const result = await Combo.create(combo);
-    return res.json(result);
+      // Validação: Verifica se todos os campos estão presentes
+      if (!name || !description || !price || quant === undefined) {
+          return res.status(400).json({ message: 'Todos os campos são obrigatórios.' });
+      }
+
+      // Criar combo no banco de dados
+      const combo = await Combo.create({ name, description, price, quant });
+      res.status(201).json(combo);
   } catch (error) {
-    return res.json(error.message);
+      console.error('Erro ao adicionar combo:', error);
+      res.status(500).json({ message: 'Erro ao adicionar combo.' });
   }
 });
+
 
 app.get('/list-combos', async (req, res) => {
   const combos = await Combo.find().exec();
@@ -93,6 +175,31 @@ app.delete('/delete-combo/:id', async (req, res) => {
   const result = await Combo.deleteOne({ _id: id }).exec();
   return res.json(result);
 });
+
+// Método para comprar combo, id pelo nome
+app.post('/buy-combo/:name', async (req, res) => {
+  const { name } = req.params;
+  const { quantity } = req.body; // Quantidade a ser comprada
+
+  try {
+    const combo = await Combo.findById(name);
+    if (!combo) {
+      return res.status(404).json({ message: 'Combo not found' });
+    }
+
+    if (combo.quant < quantity) {
+      return res.status(400).json({ message: 'Not enough stock' });
+    }
+
+    combo.quant -= quantity; // Atualiza o estoque
+    await combo.save();
+
+    return res.json({ message: 'Sucesso!', combo });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+});
+
 
 app.listen(3000, () => {
   console.log('Server listening on port 3000');
